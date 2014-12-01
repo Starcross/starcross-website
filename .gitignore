@@ -1,0 +1,11 @@
+*.pyc
+/starcross/settings.py
+/egg_cache
+media
+static
+blog
+gallery
+goingout
+/starcross/starcross.db
+Thumbs.db
+.idea

@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+      Starcross - {% block title %} {% endblock %}
+  </title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{% static 'demo.css' %}">
+   {% block header %}
+   {% endblock %}
+
+</head>
+
+<body>
+
+    <div id="overlay">
+        <a href="/">
+            <img src="{% static 'images/starcross.png' %}">
+        </a>
+        <h2>{% block overlay %}{% endblock %}</h2>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+{% include "google_analytics.html" %}
+</body>
+
+</html>

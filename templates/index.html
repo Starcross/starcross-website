@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+{% include "blog/blogentry_list.html" %}
+
+<h2>Featured Demos</h2>
+<div id="feature_boxes">
+    <a href="fractal.html">
+        <div style="background-image: url('{% static 'images/features/fractal.png' %}')">
+            <div class="title"><span>Fractal Generator</span></div>
+        </div>
+    </a>
+
+    <a href="gameoflife.html">
+        <div style="background-image: url('{% static 'images/features/gameoflife.png' %}')">
+            <div class="title"><span>Game of Life</span></div>
+        </div>
+    </a>
+    <a href="goingout/">
+        <div style="background-image: url('{% static 'images/features/goingout.png' %}'); margin-right: 0;">
+            <div class="title"><span>Going Out - Guide</span></div>
+        </div>
+    </a>
+</div>
+
+<div style="clear:both; margin-bottom: 8px"></div>
+
+<a href="mailto:alex@starcross.eu">
+    <img src="{% static 'images/portrait_circle_small.png' %}" title="Alex Luton" width="250" height="247"
+         style="float:left; padding-right: 16px; margin-top:16px">
+</a>
+
+<h2 style="margin-top: 32px">About Me</h2>
+<p>I am an experienced software developer and project manager available for contract and freelance work.</p>
+<p>I haved worked with a wide range of technologies, particularly open source tools like <a href="http://www.python.org">Python</a>, <a href="http://www.mysql.org">MySQL</a>, <a href="http://java.com">Java</a>, C++, <a href="http://plone.org">Plone</a>, and <a href="http://www.zope.org">Zope</a>.</p>
+<p>This site contains examples of my work, including <a href="https://www.djangoproject.com/">Django</a>, Python, Javascript, HTML5 and CSS.</p>
+<p>My project management experience covers the health / charity / education sector, and I am a <a href="http://www.apmg-international.com/prince2">PRINCE2</a> qualified practicioner.</p>
+<p>Based in <a href="http://bit.ly/1v2t3U3">Hertfordshire</a>, I can readily access central London and surroundings.</p>
+<p>My hobbies include photography, so please check out <a href="http://semuta.net">my website</a> or my <a href="https://secure.flickr.com/photos/62405492@N07/">flickr profile</a></p>
+<p>Take a look at <a href="{% static 'docs/CV - Alex Luton - Web.docx' %}">My CV</a> and code examples on <a href="https://github.com/Starcross">GitHub</a></p>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base_demo.html" %}
+{% load staticfiles %}
+
+{% block title %} Conway's Game of Life {% endblock %}
+
+{% block header %}
+    <style>
+        #lifecontainer {
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            padding: 40%;
+            box-sizing: border-box;
+            position: relative;
+        }
+        #gameoflife {
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            position:absolute;
+        }
+    </style>
+{% endblock %}
+
+{% block overlay %}
+        <h2>Game of Life</h2>
+        <div id="controls">
+            <label for="speed">Speed</label>
+            <input id="speed" type="range" min="1" max="20" value="5">
+            <input id="randomise" type="button" value="Randomise">
+        </div>
+{% endblock %}
+
+{% block content %}
+    <div id="lifecontainer">
+        <canvas id="gameoflife"></canvas>
+    </div>
+    <script type="text/javascript" src="{% static 'js/gameoflife/gameoflife.js' %}"></script>
+{% endblock %}
