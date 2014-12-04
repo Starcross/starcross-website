@@ -31,14 +31,11 @@ h2{
 #overlay img{
     width: 234px; height: 49px;
     float: left;
+    border: 0;
 }
 #overlay h2{
     float: right;
     margin-right: 32px;
-}
-#overlay img {
-    border: 0;
-    float: left;
 }
 #controls {
     float: left;

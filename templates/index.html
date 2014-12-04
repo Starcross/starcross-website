@@ -8,7 +8,9 @@
 
 {% include "blog/blogentry_list.html" %}
 
-<h2>Featured Demos</h2>
+<div style="float:right;"><a href="{%url 'blog:blogentry_list' %}">More..</a></div>
+
+<h2 style="clear:both">Featured Demos</h2>
 <div id="feature_boxes">
     <a href="fractal.html">
         <div style="background-image: url('{% static 'images/features/fractal.png' %}')">

@@ -37,7 +37,7 @@ body, html {
 
 }
 #content {
-    padding: 0px 16px 8px 16px;
+    padding: 0px 20px 8px 20px;
     margin-bottom: 110px;
 
 }
@@ -129,7 +129,7 @@ input, body.mceContentBody {
 
 #feature_boxes div {
     float: left;
-    width: 32%;
+    width: 32.3%;
     height: 128px;
     background-size: 317px 144px;
     margin-right: 1%;
