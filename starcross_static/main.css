@@ -27,7 +27,7 @@ body, html {
 }
 #main{
     position: relative;
-    background-color: rgba(58, 58, 58, 0.8);
+    background-color: rgba(58,58,58,0.8);
     min-height: 90%;
     max-width: 1024px;
     width: 75%;
@@ -151,5 +151,30 @@ input, body.mceContentBody {
 #feature_boxes div.title span {
     margin-left: 8px;
     color: #ddd;
+}
+
+@media only screen and (max-width: 800px) {
+	#content {
+		margin-bottom: 140px;
+	}	
+	#feature_boxes div {
+		float: none;
+		width: 100%;
+		background-size: 100%;
+	}
+	#logo {
+		width: 70%;
+	}
+	#portrait {
+		width: 125px;
+		height: 123px;
+	}
+	h2 {
+		font-size: 1.1em;
+	}
+	h3 {
+		font-size: 1em;
+	}
+
 }
 
