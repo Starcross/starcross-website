@@ -4,7 +4,7 @@ body,html {
     font-family: 'Lucida Sans Unicode', sans-serif;
 }
 body:after {
-    background-image: url('images/scanlines_1024.png');
+    background-image: url('../images/scanlines_1024.png');
     position: absolute;
     opacity: 1;
     top: 0;
@@ -16,7 +16,7 @@ body:after {
 }
 @font-face {
     font-family: Hyperspace;
-    src: url('fonts/Hyperspace.ttf') format('truetype');
+    src: url('../fonts/Hyperspace.ttf') format('truetype');
 }
 h2{
     font-family: 'Hyperspace', 'Lucida Sans Unicode', sans-serif;

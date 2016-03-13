@@ -3,6 +3,14 @@
   Adapted from http://www.codeproject.com/Articles/642499/Learn-JavaScript-Part-Create-a-Starfield
 */
 
+// Initialise starfield on load
+window.onload = function(e) { 
+   	var container = document.getElementById('starfield');
+	var starfield = new Starfield();
+	starfield.initialise(container);
+	starfield.start();
+}
+
 //	Define the starfield class.
 function Starfield() {
 	this.fps = 15;

@@ -66,7 +66,7 @@ body, html {
 }
 @font-face {
     font-family: Hyperspace;
-    src: url('fonts/Hyperspace.ttf') format('truetype');
+    src: url('../fonts/Hyperspace.ttf') format('truetype');
 }
 h2{
     font-family: 'Hyperspace', 'Lucida Sans Unicode', sans-serif;
