@@ -1,0 +1,6 @@
+[submodule "starcross_static/js/fractal"]
+	path = starcross_static/js/fractal
+	url = https://github.com/Starcross/canvas-fractal.git
+[submodule "/starcross_static/js/gameoflife"]
+	path = starcross_static/js/gameoflife
+	url = https://github.com/Starcross/canvas-gameoflife.git

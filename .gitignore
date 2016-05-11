@@ -7,3 +7,5 @@
 /goingout
 /starcross/starcross.db
 /starcross/wsgi.py
+
+start_test_server.sh

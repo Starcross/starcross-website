@@ -4,6 +4,10 @@
 {% block title %} Conway's Game of Life {% endblock %}
 
 {% block header %}
+
+
+	<script type="text/javascript" src="{% static 'js/gameoflife/brushdata.js' %}"></script>
+
     <style>
         #lifecontainer {
             margin-left: auto;
@@ -33,9 +37,21 @@
 
 
         <div id="controls">
-            <label for="speed">Speed</label>
-            <input id="speed" type="range" min="1" max="20" value="5">
+
+            <label for="speed">Speed</label> 
+			<input id="speed" type="range" min="1" max="20" value="5">
+            
+			<input id="play" type="button" value="Pause">
+	        <input id="blank" type="button" value="Blank">
             <input id="randomise" type="button" value="Randomise">
+			
+			<label for="wrap">Wrap</label>
+			<input id="wrap" type="checkbox" checked>
+
+			<label for="brush">Brush</label>
+			<select id="brush"></select>
+			
+
         </div>
 {% endblock %}
 
@@ -43,5 +59,7 @@
     <div id="lifecontainer">
         <canvas id="gameoflife"></canvas>
     </div>
+
     <script type="text/javascript" src="{% static 'js/gameoflife/gameoflife.js' %}"></script>
+
 {% endblock %}
