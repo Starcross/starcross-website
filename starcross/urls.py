@@ -16,11 +16,14 @@ from django.urls import path, re_path, include
 from django.contrib import admin
 from django.conf import settings
 from django.views.static import serve
+from django.http import HttpResponse
 from starcross.views import StaticView, IndexView
+
 
 urlpatterns = [
     path('', IndexView.as_view()),
     path('admin/', admin.site.urls),
+    path('robots.txt', lambda r: HttpResponse("User-agent: *\nDisallow: /", content_type="text/plain")),
     path('blog/', include('blog.urls', namespace='blog')),
     path('gallery/', include('gallery.urls', namespace='gallery')),
     path('goingout/', include('goingout.urls', namespace='goingout')),
