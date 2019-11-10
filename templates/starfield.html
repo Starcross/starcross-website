@@ -1,0 +1,62 @@
+{% extends "base_demo.html" %}
+{% load staticfiles %}
+
+{% block title %} C64 6502 Starfield {% endblock %}
+
+{% block header %}
+    <style>
+        #c64_canvas {
+            position:absolute;
+            left:0;
+            right:0;
+            margin-right:auto;
+            margin-left:auto;
+            margin-top: 64px
+        }
+    </style>
+{% endblock %}
+
+{% block overlay %}
+        <h2>C64 Starfield
+            <a title="Code on GitHub" class="webicon github" href="https://github.com/Starcross/starfield">Code on GitHub</a>
+        </h2>
+{% endblock %}
+
+{% block content %}
+        <canvas id="c64_canvas"></canvas>
+        <script src="{% static 'js/starfield/x64.js' %}"></script>
+        <script>
+            const toBase64 = data => new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(data);
+                reader.onload = () => resolve(reader.result.replace(/^.*,/, ''));
+                reader.onerror = error => reject(error);
+            });
+            async function loadData() {
+                const prgUrl = "{% static 'js/starfield/star.prg' %}";
+                const response = await fetch(prgUrl);
+                const blobData = await response.blob();
+                prgData = await toBase64(blobData);
+
+            }
+            function createDataFile() {
+                Module['FS_createDataFile']('/', 'star.prg', window.atob(prgData), true, true);
+            }
+            loadData().then(() => {
+                x64(Module);
+            });
+             Module = {
+                 preRun : [createDataFile],
+                 arguments: [
+                    '-autostart', 'star.prg',
+                    '-autostartprgmode', 1,
+                    '-VICIIcrtscanlineshade', 800,
+                    '-VICIIsaturation', 1200,
+                    '-VICIIgamma', 2200,
+                    '-VICIIbrightness', 1000,
+                    '-soundsync', 1,
+                ],
+                canvas: document.getElementById('c64_canvas'),
+             };
+        </script>
+{% endblock %}
