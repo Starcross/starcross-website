@@ -36,7 +36,7 @@ class TemplateSitemap(Sitemap):
     priority = 0.75
 
     def items(self):
-        return ['fractal.html', 'gameoflife.html', '']
+        return ['fractal.html', 'gameoflife.html', 'starfield.html']
 
     def location(self, item):
         return '/{}'.format(item)
