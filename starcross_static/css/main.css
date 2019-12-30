@@ -6,8 +6,8 @@ body, html {
 
 #scanlines_container {
     position:fixed;
-    top:0px;
-    left:0px;
+    top:0;
+    left:0;
     z-index:-1;
     opacity:0.1;
     width: 100%;
@@ -33,11 +33,11 @@ body, html {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
-    padding: 8px 0px 8px 0px;
+    padding: 8px 0 8px 0;
 
 }
 #content {
-    padding: 0px 20px 8px 20px;
+    padding: 0 20px 8px 20px;
     margin-bottom: 110px;
 
 }
@@ -53,14 +53,14 @@ body, html {
 .spacer{
     width: 100%;
     height: 8px;
-    background: rgba(255,0,0,1,0.8);
+    background: rgba(255,0,0,0.8);
     background: linear-gradient(to right, rgba(255,0,0,0.8) 0%, rgba(255,255,0,0.8) 33%, rgba(0,255,0,0.8) 66%, rgba(0,255,255,0.8) 100%);
 }
 .spacer_end{
     width: 100%;
     height: 4px;
     position: absolute;
-    top: 0px; left: 0px;
+    top: 0; left: 0;
     background: rgba(0,255,255,0.8);
     background: linear-gradient(to right, rgba(0,255,255,0.8) 0%, rgba(255,0,255,0.8) 54%, rgba(255,0,0,0.8) 100%);
 }
@@ -107,12 +107,15 @@ img {
 img.captcha {
     vertical-align: middle;
 }
+li {
+   margin-bottom: 0.5em;
+}
 .webicon.large {
     box-sizing: border-box;
     border-radius: 8px;
     margin-left: 6px;
     position: relative;
-    top: 0px;
+    top: 0;
     transition: top 0.4s ease-in-out;
 }
 .webicon.large:hover {
@@ -141,7 +144,7 @@ input, body.mceContentBody {
     transition: background 0.4s ease-in-out;
     width: 100%;
     height: 20%;
-    bottom:0px;
+    bottom: 0;
     position: absolute;
     padding: 8px 0 8px 0;
 }
