@@ -1,11 +1,8 @@
 *.pyc
+__pycache__
 /starcross/settings.py
-/egg_cache
-/media
-/blog
-/gallery
-/goingout
 /starcross/starcross.db
 /starcross/wsgi.py
-
-start_test_server.sh
+/starcross/static
+/media
+.env

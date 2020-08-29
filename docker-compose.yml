@@ -1,0 +1,65 @@
+version: '3'
+
+services:
+  starcross:
+    depends_on:
+        - postgres
+    build: ./starcross/
+    volumes:
+      - django-static:/starcross/static
+      - django-media:/starcross/media
+    env_file: .env
+    environment:
+      DEBUG: 'true'
+    command: sh -c "python manage.py collectstatic --noinput &&
+                    gunicorn starcross.wsgi:application --workers=2 --threads=4 --worker-class=gthread
+                                                        --bind :80 --worker-tmp-dir /dev/shm"
+
+  nginx:
+    restart: always
+    build: ./nginx/
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - django-static:/starcross/static
+      - django-media:/starcross/media
+      - www-certs:/etc/letsencrypt
+    env_file: .env
+    links:
+      - starcross:starcross
+      - meghan:meghan
+    
+
+  postgres:
+    restart: always
+    image: postgres:9.6.18
+    env_file: .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+
+  meghan:
+    depends_on:
+      - mysql
+    image: wordpress:5.5.0
+    restart: always
+    env_file: .env
+    volumes: 
+      - meghan-content:/var/www/html/wp-content
+
+  mysql:
+    image: mysql:5.7.31
+    restart: always
+    env_file: .env
+    volumes:
+      - mysqldata:/var/lib/mysql
+
+
+volumes:
+    django-static:
+    django-media:
+    www-certs:
+    pgdata:
+    meghan-content:
+    mysqldata:
+
