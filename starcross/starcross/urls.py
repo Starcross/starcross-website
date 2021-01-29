@@ -45,14 +45,13 @@ urlpatterns = [
 if settings.DEBUG:
     # static files (images, css, javascript, etc.)
     urlpatterns += [re_path(
-        r'media/(?P<path>.*)$', serve, {
-        'document_root': settings.MEDIA_ROOT})]
+        r'media/(?P<path>.*)$', serve,
+        {'document_root': settings.MEDIA_ROOT})]
     urlpatterns += [re_path(
-        r'static/(?P<path>.*)$', serve, {
-        'document_root': settings.STATIC_ROOT})]
+        r'static/(?P<path>.*)$', serve,
+        {'document_root': settings.STATIC_ROOT})]
     # Debug toolbar
     import debug_toolbar
     urlpatterns += [
         re_path('^__debug__/', include(debug_toolbar.urls))
     ]
-

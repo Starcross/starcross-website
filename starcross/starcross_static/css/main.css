@@ -2,10 +2,11 @@ body, html {
     height: 100%;
     color: #ddd;
     font-family: 'Metrophobic', sans-serif;
+    font-size: 1.07em
 }
 
 #scanlines_container {
-    position:fixed;
+    position: fixed;
     top:0;
     left:0;
     z-index:-1;
@@ -13,10 +14,12 @@ body, html {
     width: 100%;
     height: 100%;
 }
+
 #scanlines_container img {
     width:100%;
     height:100%;
 }
+
 #starfield {
     width: 100%;
     height: 100%;
@@ -25,9 +28,10 @@ body, html {
     top: 0;
     z-index: -2;
 }
-#main{
+
+#main {
     position: relative;
-    background-color: rgba(58,58,58,0.8);
+    background-color: rgba(58, 58, 58, 0.8);
     min-height: 90%;
     max-width: 1024px;
     width: 75%;
@@ -36,11 +40,13 @@ body, html {
     padding: 8px 0 8px 0;
 
 }
+
 #content {
     padding: 0 20px 8px 20px;
     margin-bottom: 110px;
 
 }
+
 #footer {
     width: auto;
     left: 0;
@@ -50,66 +56,96 @@ body, html {
     padding: 32px 16px 24px 16px;
     bottom: 0;
 }
-.spacer{
+
+/* ZX Spectrum rainbow spacers */
+
+.spacer {
     width: 100%;
     height: 8px;
     background: rgba(255,0,0,0.8);
-    background: linear-gradient(to right, rgba(255,0,0,0.8) 0%, rgba(255,255,0,0.8) 33%, rgba(0,255,0,0.8) 66%, rgba(0,255,255,0.8) 100%);
+    background: linear-gradient(
+            to right,
+            rgba(255,0,0,0.8) 0%,
+            rgba(255,255,0,0.8) 33%,
+            rgba(0,255,0,0.8) 66%,
+            rgba(0,255,255,0.8) 100%
+    );
 }
-.spacer_end{
+
+.spacer_end {
     width: 100%;
     height: 4px;
     position: absolute;
     top: 0; left: 0;
     background: rgba(0,255,255,0.8);
-    background: linear-gradient(to right, rgba(0,255,255,0.8) 0%, rgba(255,0,255,0.8) 54%, rgba(255,0,0,0.8) 100%);
+    background: linear-gradient(
+            to right,
+            rgba(0,255,255,0.8) 0%,
+            rgba(255,0,255,0.8) 54%,
+            rgba(255,0,0,0.8) 100%
+    );
 }
+
+/* Content */
+
 @font-face {
     font-family: Hyperspace;
     src: url('../fonts/Hyperspace.ttf') format('truetype');
 }
-h2{
+
+h2 {
     font-family: 'Hyperspace', 'Lucida Sans Unicode', sans-serif;
     font-weight: bold;
     letter-spacing: 1px;
     color: #DD0;
-    font-size: 1.45em;
+    font-size: 1.25em;
 }
+
 h2.header {
     color: white;
 }
+
 h3 {
     color: #DD0;
-    font-size: 1.2em;
+    font-size: 1.05em;
 }
+
 a {
     text-decoration: none;
     font-weight: bold;
     color: #00ADAD;
     transition: color 0.4s ease-in-out;
 }
+
 a:hover {
-    color: #00DDDD;
+    color: #0DD;
 }
-p,span,li {
-    font-size: 1.08em;
-}
+
 p {
-    line-height: 130%;
-    margin: 0.7em 2em 0.9em 0;
+    line-height: 120%;
+    margin: 0.2em 3% 1.3em 0;
 }
+
 pre {
+    font-size: 1.1em;
     margin: 2em 0 2em 0;
 }
+pre * span {
+    line-height: 130%;
+}
+
 img {
     border: 0;
 }
+
 img.captcha {
     vertical-align: middle;
 }
+
 li {
-   margin-bottom: 0.5em;
+   margin-bottom: 0.15em;
 }
+
 .webicon.large {
     box-sizing: border-box;
     border-radius: 8px;
@@ -118,17 +154,28 @@ li {
     top: 0;
     transition: top 0.4s ease-in-out;
 }
+
 .webicon.large:hover {
     top: 3px;
 }
-input, body.mceContentBody {
-    background: #ddd;
+
+/* Blog comments */
+
+.comments {
+    padding: 12px 0;
 }
 
 .comment {
     background: rgba(64,64,64,0.7);
-    margin: 3px 0 3px 0;
+    margin: 12px 0;
+    padding: 6px 0 12px 12px;
 }
+
+.tox-tinymce {
+    margin: 16px 0;
+}
+
+/* Image feature highlight on front page */
 
 #feature_boxes div {
     float: left;
@@ -139,6 +186,7 @@ input, body.mceContentBody {
     margin-top: 4px;
     position: relative;
 }
+
 #feature_boxes div.title {
     background: rgba(64,64,64,0.7);
     transition: background 0.4s ease-in-out;
@@ -148,15 +196,22 @@ input, body.mceContentBody {
     position: absolute;
     padding: 8px 0 8px 0;
 }
+
 #feature_boxes div:hover div.title {
     background: rgba(64,64,64,0.5);
 }
+
 #feature_boxes div.title span {
     margin-left: 8px;
     color: #ddd;
 }
 
+/** Mobile / Tablet */
+
 @media only screen and (max-width: 800px) {
+    #main {
+        width: 85%;
+    }
 	#content {
 		margin-bottom: 140px;
 	}	
