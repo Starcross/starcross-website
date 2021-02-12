@@ -1,5 +1,5 @@
 /*
-	Starfield lets you take a div and turn it into a starfield.
+	Draw a starfield by creating a canvas object inside a given container
     Adapted from http://www.codeproject.com/Articles/642499/Learn-JavaScript-Part-Create-a-Starfield
 */
 
@@ -47,7 +47,7 @@ class Starfield {
     }
 
     start() {
-        //  Create the stars
+        //  Initialise stars
         this.stars = []
         for (let i = 0; i < this.numStars; i++) {
             this.stars[i] = new Star(Math.random() * this.width, Math.random() * this.height,
