@@ -34,7 +34,7 @@ services:
 
   postgres:
     restart: always
-    image: postgres:9.6.18
+    image: postgres:9.6.24
     env_file: .env
     volumes:
       - pgdata:/var/lib/postgresql/data/
@@ -42,14 +42,14 @@ services:
   meghan:
     depends_on:
       - mysql
-    image: wordpress:5.5.0
+    image: wordpress:5.8.2
     restart: always
     env_file: .env
     volumes: 
       - meghan-content:/var/www/html/wp-content
 
   mysql:
-    image: mysql:5.7.31
+    image: mysql:5.7.36
     restart: always
     env_file: .env
     volumes:
