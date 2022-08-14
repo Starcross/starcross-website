@@ -28,10 +28,16 @@ sitemaps = {'blog': BlogEntrySitemap,
             'template': TemplateSitemap,
             'static': StaticSitemap}
 
+robots_txt = """User-agent: *
+Allow: /
+
+Sitemap: https://starcross.dev/sitemap.xml
+"""
+
 urlpatterns = [
     path('', IndexView.as_view()),
     path('admin/', admin.site.urls),
-    path('robots.txt', lambda r: HttpResponse("User-agent: *\nAllow: /", content_type="text/plain")),
+    path('robots.txt', lambda r: HttpResponse(robots_txt, content_type="text/plain")),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
          name='django.contrib.sitemaps.views.sitemap'),
     path('blog/', include('blog.urls', namespace='blog')),
@@ -52,6 +58,7 @@ if settings.DEBUG:
         {'document_root': settings.STATIC_ROOT})]
     # Debug toolbar
     import debug_toolbar
+
     urlpatterns += [
         re_path('^__debug__/', include(debug_toolbar.urls))
     ]
