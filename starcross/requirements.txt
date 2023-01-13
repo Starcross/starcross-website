@@ -1,5 +1,5 @@
 Django==4.0.5
-Pillow==9.1.1
+Pillow==9.4.0
 django-admin-sortable2==2.0.4
 git+https://github.com/starcross/django-geoposition#egg=django-geoposition
 django-imagekit==4.1.0
