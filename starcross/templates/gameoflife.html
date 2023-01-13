@@ -5,9 +5,6 @@
 
 {% block header %}
 
-
-	<script type="text/javascript" src="{% static 'js/gameoflife/brushdata.js' %}"></script>
-
     <style>
         #lifecontainer {
             margin-left: auto;
@@ -25,6 +22,7 @@
             position:absolute;
         }
     </style>
+
 {% endblock %}
 
 {% block overlay %}
@@ -51,15 +49,17 @@
 			<label for="brush">Brush</label>
 			<select id="brush"></select>
 			
-
         </div>
+
 {% endblock %}
 
 {% block content %}
+
     <div id="lifecontainer">
         <canvas id="gameoflife"></canvas>
     </div>
 
+    <script type="text/javascript" src="{% static 'js/gameoflife/brushdata.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/gameoflife/gameoflife.js' %}"></script>
 
 {% endblock %}
