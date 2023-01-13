@@ -4,5 +4,5 @@ __pycache__
 /starcross/starcross.db
 /starcross/wsgi.py
 /starcross/static
+/starcross/.venv
 /media
-.env
