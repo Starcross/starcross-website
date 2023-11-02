@@ -11,7 +11,7 @@ services:
       - django-media:/starcross/media
     env_file: .env
     environment:
-      DEBUG: 'true'
+      DEBUG: 'false'
     command: sh -c "python manage.py collectstatic --noinput &&
                     gunicorn starcross.wsgi:application --workers=2 --threads=4 --worker-class=gthread
                                                         --bind :80 --worker-tmp-dir /dev/shm"
@@ -34,7 +34,7 @@ services:
 
   postgres:
     restart: always
-    image: postgres:9.6.24
+    image: postgres:16.0
     env_file: .env
     volumes:
       - pgdata:/var/lib/postgresql/data/
