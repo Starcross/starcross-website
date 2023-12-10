@@ -6,7 +6,7 @@ TIMESTAMP="$(date +%Y-%m-%d)"
 
 cd "$(dirname "$0")";          
 
-docker exec starcross_mysql_1 sh -c 'exec mysqldump --all-databases -u"$WORDPRESS_DB_USER" -p"$WORDPRESS_DB_PASSWORD"' > mysql-$TIMESTAMP.sql 
+docker exec starcross_mysql_1 sh -c 'exec mysqldump --no-tablespaces -u"$WORDPRESS_DB_USER" -p"$WORDPRESS_DB_PASSWORD" wordpress' > mysql-$TIMESTAMP.sql 
 docker exec starcross_postgres_1 sh -c 'exec pg_dump -U"$POSTGRES_USER"' > postgres-$TIMESTAMP.sql
 
 
