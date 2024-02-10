@@ -159,6 +159,21 @@ li {
     top: 3px;
 }
 
+.break {
+    clear:both;
+    margin-bottom: 8px;
+}
+.portrait {
+    float:left;
+    border-radius: 50%;
+    padding-right: 16px;
+    margin-top: 16px;
+}
+.portrait img {
+    border: 1.5cqmin solid #ddd;
+    border-radius: 50%;
+}
+
 /* Blog comments */
 
 .comments {
@@ -223,7 +238,7 @@ li {
 	#logo {
 		width: 70%;
 	}
-	#portrait {
+	.portrait img {
 		width: 125px;
 		height: 123px;
 	}
