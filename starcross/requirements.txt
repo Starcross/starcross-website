@@ -4,7 +4,7 @@ django-admin-sortable2==2.1.10
 git+https://github.com/starcross/django-geoposition#egg=django-geoposition
 django-imagekit==5.0.0
 django-simple-captcha==0.6.0
-django-tinymce==4.0.0
+django-tinymce==4.1.0
 gunicorn==22.0.0
 psycopg2-binary==2.9.9
 django-debug-toolbar==4.3.0
