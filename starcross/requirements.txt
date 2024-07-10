@@ -1,4 +1,4 @@
-Django==4.2.13
+Django==4.2.14
 pillow==10.3.0
 django-admin-sortable2==2.1.10
 git+https://github.com/starcross/django-geoposition#egg=django-geoposition
